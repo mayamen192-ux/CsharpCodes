@@ -16,6 +16,10 @@
                 Console.WriteLine("4.Find the smallest number  ");
                 Console.WriteLine("5.conut number of positive numbers and  number of negative numbers");
                 Console.WriteLine("6.output prime numbers");
+                Console.WriteLine("7.prints a multiplication table");
+                Console.WriteLine("8. print non duplicate numbers");
+                Console.WriteLine("9. merge two lists");
+
 
                 int option = int.Parse(Console.ReadLine());
 
@@ -145,6 +149,97 @@
                             }
 
                         }
+                        break;
+                    case 7:
+                        Console.WriteLine("Enter a number");
+                        int n5 = int.Parse(Console.ReadLine());
+                        for (int i = 1; i <= n5; i++)
+                        {
+                            for (int j = 1; j <= n5; j++)
+                            {
+                                int M = i * j;
+                                Console.WriteLine(i + " × " + j + " = " + M);
+                            }
+                        }
+
+
+
+
+                        break;
+                    case 8:
+                        Console.WriteLine("Enter how many numbers you need:");
+                        int n7 = int.Parse(Console.ReadLine());
+                        int[] intput = new int[n7];
+                        bool Check = false;
+                        for (int i = 0; i < n7; i++)
+                        {
+                            Console.WriteLine("Enter number:");
+                            intput[i] = int.Parse(Console.ReadLine());
+                        }
+
+                        for (int i = 0; i < n7; i++)
+                        {
+                            for (int j = (i + 1); j < n7; j++)
+                            {
+                                if (intput[i] == intput[j])
+                                {
+
+                                    Check = true;
+                                    Console.WriteLine("has duplicate numbers");
+                                    break;
+
+
+                                }
+                            }
+                        }
+
+                        if (!Check)
+                        {
+                            Console.WriteLine("no duplicate numbers");
+
+                        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        break;
+                    case 9:
+                        Console.WriteLine("Enter how many numbers you need");
+                        int n8 = int.Parse(Console.ReadLine());
+                        int[] arr1 = new int[n8];
+
+                        Console.WriteLine("Enter numbers in array one:");
+                        for (int i = 0; i < n8; i++)
+
+                            arr1[i] = int.Parse(Console.ReadLine());
+
+
+                        Console.WriteLine("Enter how many numbers you need:");
+                        int n88 = int.Parse(Console.ReadLine());
+                        int[] arr2 = new int[n88];
+
+
+                        Console.WriteLine("Enter numbers in array two:");
+                        for (int i = 0; i < n88; i++)
+                            arr2[i] = int.Parse(Console.ReadLine());
+
+
+                        int[] arr3 = new int [arr1.Length + arr2.Length];
+                        Console.WriteLine("The merge array" + arr3);
+
+
+                
+
+       
                         break;
 
                     default:
