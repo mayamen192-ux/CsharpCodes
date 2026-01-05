@@ -200,18 +200,8 @@
                         }
 
 
-
-
-
-
-
-
-
-
-
-
-
                         break;
+
                     case 9:
                         Console.WriteLine("Enter how many numbers you need");
                         int n8 = int.Parse(Console.ReadLine());
@@ -234,7 +224,11 @@
 
 
                         int[] arr3 = new int [arr1.Length + arr2.Length];
-                        Console.WriteLine("The merge array" + arr3);
+                        arr1.CopyTo(arr3, 0); 
+                        arr2.CopyTo(arr3, arr1.Length);
+                        Console.WriteLine("The merge array" + string.Join(", ", arr3));
+
+
 
 
                 
