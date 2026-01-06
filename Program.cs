@@ -19,6 +19,7 @@
                 Console.WriteLine("7.prints a multiplication table");
                 Console.WriteLine("8. print non duplicate numbers");
                 Console.WriteLine("9. merge two lists");
+                Console.WriteLine("10.Find the Second Largest Number");
 
 
                 int option = int.Parse(Console.ReadLine());
@@ -235,6 +236,34 @@
 
 
        
+                        break;
+                    case 10:
+                        Console.WriteLine("Enter how many number you need:");
+                        int n9 = int.Parse(Console.ReadLine());
+                        int[] input2= new int[n9];
+                        int largest = int.MinValue;
+                        int secondLargest = int.MinValue;
+                        for(int i = 0; i < n9; i++)
+                        {
+                            Console.WriteLine("Enter a number");
+                            input2[i]=int.Parse(Console.ReadLine());
+
+                        }
+                        for(int i = 0;i < input2.Length; i++)
+                        {
+                            if (input2[i]> largest)
+                            {
+                                secondLargest = largest;
+                                largest = input2[i];
+                            }
+
+
+                            else if  (input2[i] > secondLargest && input2[i] != largest)
+                            { 
+                                     secondLargest = input2[i];
+                            }
+                        }
+                        Console.WriteLine("Second largest number: " + secondLargest);
                         break;
 
                     default:
