@@ -20,7 +20,7 @@
                 Console.WriteLine("8. print non duplicate numbers");
                 Console.WriteLine("9. merge two lists");
                 Console.WriteLine("10.Find the Second Largest Number");
-
+                Console.WriteLine("11.Check if a String is a Palindrome");
 
                 int option = int.Parse(Console.ReadLine());
 
@@ -265,6 +265,32 @@
                         }
                         Console.WriteLine("Second largest number: " + secondLargest);
                         break;
+                        case 11:
+                        Console.WriteLine("Enter a Word:");
+                        String word=Console.ReadLine();
+                        
+                        int leftWord = 0;
+                        int rightWord = word.Length-1;
+                        while (true)
+                        {
+                            if(leftWord < rightWord)
+                            {
+                                if(word[leftWord] != word[rightWord]){
+                                    Console.WriteLine("The word is not plaindrome");
+                                    break;
+                               
+                                }
+                                else
+                                {
+                                    Console.WriteLine("The word is plaindrome");
+                                    break;
+                                }
+
+                            }
+                        }
+
+                        
+                            break;
 
                     default:
                         Console.WriteLine("invalid option");
