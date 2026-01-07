@@ -21,6 +21,8 @@
                 Console.WriteLine("9. merge two lists");
                 Console.WriteLine("10.Find the Second Largest Number");
                 Console.WriteLine("11.Check if a String is a Palindrome");
+                Console.WriteLine("12.Generate Fibonacci Sequence");
+                Console.WriteLine("13.withdraw operation");
 
                 int option = int.Parse(Console.ReadLine());
 
@@ -224,61 +226,61 @@
                             arr2[i] = int.Parse(Console.ReadLine());
 
 
-                        int[] arr3 = new int [arr1.Length + arr2.Length];
-                        arr1.CopyTo(arr3, 0); 
+                        int[] arr3 = new int[arr1.Length + arr2.Length];
+                        arr1.CopyTo(arr3, 0);
                         arr2.CopyTo(arr3, arr1.Length);
                         Console.WriteLine("The merge array" + string.Join(", ", arr3));
 
 
 
 
-                
 
 
-       
+
+
                         break;
                     case 10:
                         Console.WriteLine("Enter how many number you need:");
                         int n9 = int.Parse(Console.ReadLine());
-                        int[] input2= new int[n9];
+                        int[] input2 = new int[n9];
                         int largest = int.MinValue;
                         int secondLargest = int.MinValue;
-                        for(int i = 0; i < n9; i++)
+                        for (int i = 0; i < n9; i++)
                         {
                             Console.WriteLine("Enter a number");
-                            input2[i]=int.Parse(Console.ReadLine());
+                            input2[i] = int.Parse(Console.ReadLine());
 
                         }
-                        for(int i = 0;i < input2.Length; i++)
+                        for (int i = 0; i < input2.Length; i++)
                         {
-                            if (input2[i]> largest)
+                            if (input2[i] > largest)
                             {
                                 secondLargest = largest;
                                 largest = input2[i];
                             }
 
 
-                            else if  (input2[i] > secondLargest && input2[i] != largest)
-                            { 
-                                     secondLargest = input2[i];
+                            else if (input2[i] > secondLargest && input2[i] != largest)
+                            {
+                                secondLargest = input2[i];
                             }
                         }
                         Console.WriteLine("Second largest number: " + secondLargest);
                         break;
-                        case 11:
+                    case 11:
                         Console.WriteLine("Enter a Word:");
-                        String word=Console.ReadLine();
-                        
+                        String word = Console.ReadLine();
+
                         int leftWord = 0;
-                        int rightWord = word.Length-1;
+                        int rightWord = word.Length - 1;
                         while (true)
                         {
-                            if(leftWord < rightWord)
+                            if (leftWord < rightWord)
                             {
-                                if(word[leftWord] != word[rightWord]){
+                                if (word[leftWord] != word[rightWord]) {
                                     Console.WriteLine("The word is not plaindrome");
                                     break;
-                               
+
                                 }
                                 else
                                 {
@@ -289,8 +291,57 @@
                             }
                         }
 
-                        
+
+                        break;
+                    case 12:
+                        Console.WriteLine("Enter how many number you need:");
+                        int n10 = int.Parse(Console.ReadLine());
+                        int[] inputs2 = new int[n10];
+                        for (int i = 0; i < n10; i++)
+                        {
+                            Console.WriteLine("enter a number");
+                            inputs2[i] = int.Parse(Console.ReadLine());
+                            //if (inputs2[0]=0 && inputs2[1] = 1)
+                            {
+
+                            }
+
+                        }
+                        break;
+                    case 13:
+                        // withdraw operation
+                        String storedAccountNumber = "saving 12053556";
+                        int storedBalance = 500;
+                        Console.WriteLine("Enter a amount to withdraw:");
+                        int amount = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Enter your account number:");
+                        String accountNumber = Console.ReadLine();
+
+                        if (accountNumber == storedAccountNumber)
+                        {
+                            if(amount <= storedBalance) {
+                            storedBalance -= amount;
+
+                            Console.WriteLine("Please collect your cash:");
+                            Console.WriteLine("Remaining balance:" + storedBalance);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Insufficient balance");
+                        }
+
+                }
+                        else
+                        {
+                            Console.WriteLine("Invaild account number");
+                        }
+
+                       
                             break;
+                        case 14:
+                        //transfar operation
+                        break;
 
                     default:
                         Console.WriteLine("invalid option");
