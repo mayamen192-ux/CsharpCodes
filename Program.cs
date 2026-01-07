@@ -23,6 +23,7 @@
                 Console.WriteLine("11.Check if a String is a Palindrome");
                 Console.WriteLine("12.Generate Fibonacci Sequence");
                 Console.WriteLine("13.withdraw operation");
+                Console.WriteLine("14.trasfar operation");
 
                 int option = int.Parse(Console.ReadLine());
 
@@ -277,7 +278,8 @@
                         {
                             if (leftWord < rightWord)
                             {
-                                if (word[leftWord] != word[rightWord]) {
+                                if (word[leftWord] != word[rightWord])
+                                {
                                     Console.WriteLine("The word is not plaindrome");
                                     break;
 
@@ -320,27 +322,72 @@
 
                         if (accountNumber == storedAccountNumber)
                         {
-                            if(amount <= storedBalance) {
-                            storedBalance -= amount;
+                            if (amount <= storedBalance)
+                            {
+                                storedBalance -= amount;
 
-                            Console.WriteLine("Please collect your cash:");
-                            Console.WriteLine("Remaining balance:" + storedBalance);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Insufficient balance");
-                        }
+                                Console.WriteLine("Please collect your cash:");
+                                Console.WriteLine("Remaining balance:" + storedBalance);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Insufficient balance");
+                            }
 
-                }
+                        }
                         else
                         {
                             Console.WriteLine("Invaild account number");
                         }
 
-                       
-                            break;
-                        case 14:
+
+                        break;
+                    case 14:
                         //transfar operation
+                        String storedAccountNumber1 = "saving 12345";
+                        String storedAccountNumber2 = "saving 24680";
+                        int storedBalance1 = 552;
+                        int storedBalance2 = 363;
+
+
+                        Console.WriteLine("Enter a sender account:");
+                        String sendAccount = Console.ReadLine();
+                        Console.WriteLine("Enter a recieve account: ");
+                        String recieveAccount = Console.ReadLine();
+                        Console.WriteLine("Enter a mount that you want to send:");
+                        int amount2 = int.Parse(Console.ReadLine());
+                        if (sendAccount == storedAccountNumber1)
+                        {
+                            if (recieveAccount == storedAccountNumber2)
+                            {
+                                if (amount2 <= storedBalance1)
+                                {
+                                    storedBalance1 -= amount2;
+                                    storedBalance2 += amount2;
+                                    Console.WriteLine("please collect your cash");
+                                    Console.WriteLine("Remaining balance :" + storedBalance1);
+                                    
+                                    Console.WriteLine(" reciever has recieved additional balance:" + storedBalance2);
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Insufficient balance.");
+                            }
+
+
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invaild aacount number");
+                        }
+                
+           
+
+
+
+
                         break;
 
                     default:
